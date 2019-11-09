@@ -19,22 +19,31 @@ struct ContentView: View {
     // User interface content and layout
     var body: some View {
         VStack {
+            Spacer()
             
             // Target row
-            Text("Welcome to my first app!")
-                .fontWeight(.black)
-                .foregroundColor(.green)
+            HStack {
+                Text("Установите ползунок как можно ближе к:")
+                Text("100")
+            }
+            
+            Spacer()
             
             // Slider row
-            // TODO: Add views for the slider row here
+            HStack {
+                Text("1")
+                Slider(value: .constant(10))
+                Text("100")
+            }
             
+            Spacer()
             
             // Button row
             Button(action: {
                 print("Button pressed!")
                 self.alertIsVisible = true
             }) {
-                Text(/*@START_MENU_TOKEN@*/"Hit me!"/*@END_MENU_TOKEN@*/)
+                Text(/*@START_MENU_TOKEN@*/"Ударь меня!"/*@END_MENU_TOKEN@*/)
                     .fontWeight(.semibold)
                     .foregroundColor(.blue)
             }
@@ -44,9 +53,25 @@ struct ContentView: View {
                       dismissButton: .default(Text("Awesome!")))
             }
             
-            // Score row
-            // TODO: Add views for the score, rounds, and start and info buttons here.
+            Spacer()
             
+            // Score row
+            HStack {
+                Button(action: {}) {
+                    Text("Начать заново")
+                }
+                Spacer()
+                Text("Счет:")
+                Text("999999")
+                Spacer()
+                Text("Раунд:")
+                Text("999")
+                Spacer()
+                Button(action: {}) {
+                    Text("Информация")
+                }
+            }
+            .padding(.bottom, 20)
         }
     }
     
