@@ -14,9 +14,13 @@ struct ContentView: View {
     
     
     // User interface views
-    @State var alertIsVisible: Bool = false
-    @State var sliderValue: Double = 50.0
-    @State var target: Int = Int.random(in: 1...100)
+    @State var alertIsVisible = false
+    @State var sliderValue = 50.0
+    @State var target = Int.random(in: 1...100)
+    
+    var sliderValueRounded: Int {
+        Int(self.sliderValue.rounded())
+    }
     
     // User interface content and layout
     var body: some View {
@@ -51,9 +55,8 @@ struct ContentView: View {
             }
             .alert(isPresented: self.$alertIsVisible) {
                 Alert(title: Text("Привет!🦄"),
-                      message: Text("Значение ползунка: \(Int(self.sliderValue.rounded())).\n" +
-                        "Выбранное значение: \(self.target).\n" +
-                        "Ваш счёт: \(pointsForCurrentRound()) очков в этом раунде."), dismissButton: .default(Text("Потрясающе!")))
+                      message: Text(self.scoringMessage()),
+                      dismissButton: .default(Text("Потрясающе!")))
             }
             
             Spacer()
@@ -80,17 +83,23 @@ struct ContentView: View {
     
     // Methods
     func pointsForCurrentRound() -> Int {
-        let sliderValueRounded = Int(self.sliderValue.rounded())
         let difference: Int
-        if sliderValueRounded > self.target {
-            difference = sliderValueRounded - self.target
-        } else if self.target > sliderValueRounded {
-            difference = self.target - sliderValueRounded
+        if self.sliderValueRounded > self.target {
+            difference = self.sliderValueRounded - self.target
+        } else if self.target > self.sliderValueRounded {
+            difference = self.target - self.sliderValueRounded
         } else {
             difference = 0
         }
         return 100 - difference
     }
+    
+    func scoringMessage() -> String {
+        return "Значение ползунка: \(self.sliderValueRounded).\n" +
+            "Выбранное значение: \(self.target).\n" +
+        "Ваш счёт: \(self.pointsForCurrentRound()) в этом раунде."
+    }
+    
 }
 
 // Preview
