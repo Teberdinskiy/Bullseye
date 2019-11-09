@@ -16,6 +16,7 @@ struct ContentView: View {
     // User interface views
     @State var alertIsVisible: Bool = false
     @State var sliderValue: Double = 50.0
+    @State var target: Int = Int.random(in: 1...100)
     
     // User interface content and layout
     var body: some View {
@@ -25,7 +26,7 @@ struct ContentView: View {
             // Target row
             HStack {
                 Text("Установите ползунок как можно ближе к:")
-                Text("100")
+                Text("\(self.target)")
             }
             
             Spacer()
@@ -41,7 +42,7 @@ struct ContentView: View {
             
             // Button row
             Button(action: {
-                print("Button pressed!")
+                print("Points awarded: \(self.pointsForCurrentRound())")
                 self.alertIsVisible = true
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Ударь меня!"/*@END_MENU_TOKEN@*/)
@@ -49,9 +50,10 @@ struct ContentView: View {
                     .foregroundColor(.blue)
             }
             .alert(isPresented: self.$alertIsVisible) {
-                Alert(title: Text("Hello there"),
-                      message: Text("Значение ползунка равно \(Int(sliderValue.rounded()))"),
-                      dismissButton: .default(Text("Awesome!")))
+                Alert(title: Text("Привет!🦄"),
+                      message: Text("Значение ползунка: \(Int(self.sliderValue.rounded())).\n" +
+                        "Выбранное значение: \(self.target).\n" +
+                        "Ваш счёт: \(pointsForCurrentRound()) очков в этом раунде."), dismissButton: .default(Text("Потрясающе!")))
             }
             
             Spacer()
@@ -77,7 +79,18 @@ struct ContentView: View {
     }
     
     // Methods
-    // =======
+    func pointsForCurrentRound() -> Int {
+        let sliderValueRounded = Int(self.sliderValue.rounded())
+        let difference: Int
+        if sliderValueRounded > self.target {
+            difference = sliderValueRounded - self.target
+        } else if self.target > sliderValueRounded {
+            difference = self.target - sliderValueRounded
+        } else {
+            difference = 0
+        }
+        return 100 - difference
+    }
 }
 
 // Preview
