@@ -1,3 +1,4 @@
 # Bullseye
 The Bullseye game. With SwiftUI
-https://github.com/Teberdinskiy/Bullseye/issues/1#issue-520647235
+![IMG_9924](https://user-images.githubusercontent.com/43841583/68549664-d6049f80-040b-11ea-8164-e813b957bbac.PNG)
+
