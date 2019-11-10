@@ -1,6 +1,6 @@
 # Bullseye
 The Bullseye game. With SwiftUI
-![IMG_9924](https://user-images.githubusercontent.com/43841583/68549664-d6049f80-040b-11ea-8164-e813b957bbac.PNG)
-![IMG_9925](https://user-images.githubusercontent.com/43841583/68549681-fcc2d600-040b-11ea-8586-bcf60efb3b6d.PNG)
+<img width="973" alt="Снимок экрана 2019-11-10 в 23 41 50" src="https://user-images.githubusercontent.com/43841583/68550435-def96f00-0413-11ea-8f30-48df3eb176aa.png">
 
+<img width="972" alt="Снимок экрана 2019-11-10 в 23 42 03" src="https://user-images.githubusercontent.com/43841583/68550447-f0db1200-0413-11ea-8e5f-993ea3b8c1ed.png">
 
