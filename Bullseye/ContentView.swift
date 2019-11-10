@@ -22,6 +22,9 @@ struct ContentView: View {
         Int(self.sliderValue.rounded())
     }
     
+    @State var score = 0
+    @State var round = 1
+    
     // User interface content and layout
     var body: some View {
         VStack {
@@ -46,7 +49,7 @@ struct ContentView: View {
             
             // Button row
             Button(action: {
-                print("Points awarded: \(self.pointsForCurrentRound())")
+                print("Кнопка нажата")
                 self.alertIsVisible = true
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Ударь меня!"/*@END_MENU_TOKEN@*/)
@@ -56,7 +59,12 @@ struct ContentView: View {
             .alert(isPresented: self.$alertIsVisible) {
                 Alert(title: Text("Привет!🦄"),
                       message: Text(self.scoringMessage()),
-                      dismissButton: .default(Text("Потрясающе!")))
+                      dismissButton: .default(Text("Потрясающе!")) {
+                        self.score += self.pointsForCurrentRound()
+                        self.target = Int.random(in: 1...100)
+                        self.round += 1
+                    }
+                )
             }
             
             Spacer()
@@ -68,10 +76,10 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Счет:")
-                Text("999999")
+                Text("\(self.score)")
                 Spacer()
                 Text("Раунд:")
-                Text("999")
+                Text("\(self.round)")
                 Spacer()
                 Button(action: {}) {
                     Text("Информация")
@@ -83,21 +91,15 @@ struct ContentView: View {
     
     // Methods
     func pointsForCurrentRound() -> Int {
-        let difference: Int
-        if self.sliderValueRounded > self.target {
-            difference = self.sliderValueRounded - self.target
-        } else if self.target > self.sliderValueRounded {
-            difference = self.target - self.sliderValueRounded
-        } else {
-            difference = 0
-        }
-        return 100 - difference
+        let maximumScore = 100
+        let difference = abs(self.sliderValueRounded - self.target)
+        return maximumScore - difference
     }
     
     func scoringMessage() -> String {
-        return "Значение ползунка: \(self.sliderValueRounded).\n" +
-            "Выбранное значение: \(self.target).\n" +
-        "Ваш счёт: \(self.pointsForCurrentRound()) в этом раунде."
+        return "Выбранное значение: \(self.sliderValueRounded)\n" +
+            "Искомое значение: \(self.target)\n" +
+        "Ваш счёт: \(self.pointsForCurrentRound()) в этом раунде"
     }
     
 }
