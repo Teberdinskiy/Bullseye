@@ -13,10 +13,11 @@
 		9853160C2376E89B00238E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9853160B2376E89B00238E42 /* Assets.xcassets */; };
 		9853160F2376E89C00238E42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9853160E2376E89C00238E42 /* Preview Assets.xcassets */; };
 		985316122376E89C00238E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985316102376E89C00238E42 /* LaunchScreen.storyboard */; };
+		9853161A237850AC00238E42 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98531619237850AC00238E42 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		985316022376E89600238E42 /* Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		985316022376E89600238E42 /* Bullseye🎯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bullseye🎯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		985316052376E89600238E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		985316072376E89600238E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		985316092376E89600238E42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		9853160E2376E89C00238E42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		985316112376E89C00238E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985316132376E89C00238E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98531619237850AC00238E42 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		985316032376E89600238E42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				985316022376E89600238E42 /* Bullseye.app */,
+				985316022376E89600238E42 /* Bullseye🎯.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +61,7 @@
 				985316052376E89600238E42 /* AppDelegate.swift */,
 				985316072376E89600238E42 /* SceneDelegate.swift */,
 				985316092376E89600238E42 /* ContentView.swift */,
+				98531619237850AC00238E42 /* AboutView.swift */,
 				9853160B2376E89B00238E42 /* Assets.xcassets */,
 				985316102376E89C00238E42 /* LaunchScreen.storyboard */,
 				985316132376E89C00238E42 /* Info.plist */,
@@ -92,7 +95,7 @@
 			);
 			name = Bullseye;
 			productName = Bullseye;
-			productReference = 985316022376E89600238E42 /* Bullseye.app */;
+			productReference = 985316022376E89600238E42 /* Bullseye🎯.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9853161A237850AC00238E42 /* AboutView.swift in Sources */,
 				985316062376E89600238E42 /* AppDelegate.swift in Sources */,
 				985316082376E89600238E42 /* SceneDelegate.swift in Sources */,
 				9853160A2376E89600238E42 /* ContentView.swift in Sources */,
@@ -294,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teberdinsky.Bullseye;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bullseye🎯";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teberdinsky.Bullseye;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bullseye🎯";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
